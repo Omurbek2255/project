@@ -3,6 +3,7 @@ import { Input } from "antd";
 import { useEffect, useState } from "react";
 import { searchProducts } from "../../api/useSearch"
 import CardBody from "../../components/Card";
+import '../Search/search.css'
 
 
 const Search = () => {
@@ -30,7 +31,7 @@ const Search = () => {
   }
 
   return (
-    <div>
+    <div className="search-block">
       <Input.Search
         placeholder="Поиск товаров..."
         onSearch={(value) => setInputValue(value)}

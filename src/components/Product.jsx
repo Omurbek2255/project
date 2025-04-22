@@ -3,7 +3,7 @@ import { useProducts } from "../api/useProducts";
 import CardBody from "./Card";
 import Swiper from "swiper/react";
 import Slider from "./Slider";
-import { useStore } from "../features/store";
+import { useStore } from "../features/Store";
 import { useState } from "react";
 
 

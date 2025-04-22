@@ -1,7 +1,8 @@
 import { Button, Input } from "antd";
 import { useState } from "react";
-import { useAuthStore } from "../store";
+import { useAuthStore } from "../Store";
 import { useNavigate } from "react-router-dom";
+import './Register.css'
 
 const Register = () => {
 
@@ -11,7 +12,7 @@ const Register = () => {
     username: '',
     email: '',
     password: ''
-  })
+  })                
   const [error, setError] = useState()
 
   const navigate = useNavigate();
@@ -29,12 +30,14 @@ const Register = () => {
   }  
 
   return (
-    <div>
-      <h2>Регистрация</h2>
-      <Input onChange={handleChange} name="username" placeholder="введите имя пользователя" />
-      <Input onChange={handleChange} name="email" placeholder="введите вашу почту" />
-      <Input.Password onChange={handleChange} name="password" placeholder="Введите пароль" />
-      <Button onClick={handleRegister}>Зарегистрироваться</Button>
+    <div className="reg-block">
+      <div className="reg-form">
+        <h2>Регистрация</h2>
+        <Input className="reg-inp" onChange={handleChange} name="username" placeholder="введите имя пользователя" />
+        <Input className="reg-inp"  onChange={handleChange} name="email" placeholder="введите вашу почту" />
+        <Input.Password className="reg-inp"  onChange={handleChange} name="password" placeholder="Введите пароль" />
+        <Button className="reg-inp" onClick={handleRegister}>Зарегистрироваться</Button>
+      </div>
     </div>
   )
 }

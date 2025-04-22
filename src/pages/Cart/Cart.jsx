@@ -1,5 +1,5 @@
 import CardBody from "../../components/Card";
-import { useStore } from "../../features/store";
+import { useStore } from "../../features/Store";
 
 
 const CartPage = () => {
