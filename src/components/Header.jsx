@@ -5,7 +5,6 @@ import style from "./header.module.css"
 const Header = () =>{
 
     const logout = useAuthStore((state) => state.logout)
-    console.log(logout);
     
     const navigate = useNavigate()
 

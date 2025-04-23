@@ -18,16 +18,24 @@ const Login = () => {
     setCredentials({...credentials, [e.target.name]: e.target.value})
   }
 
-  const handleLogin = () => {
-    const errMsg = login(credentials.username, credentials.password)
+  const storedUsers = JSON.parse(localStorage.getItem('users') || '[]')
+  console.log(storedUsers);
 
-    if (errMsg) {
-      alert(errMsg)
-      return;
-    } else{
+  const handleLogin = () => {
+    const passTest = storedUsers.some(user => user.password === credentials.password)
+    const usernameTest = storedUsers.some(user => user.username === credentials.username)
+    
+    
+    
+
+    if (usernameTest && passTest){
+      login(credentials.username, credentials.password)
       navigate('/')
       setAuthActive(true)
-      console.log(authActive); 
+      alert('Вы вошли в аккаунт!')
+
+    } else{
+      alert('Пароль или логин не правельный!')
     } 
   }
   return (

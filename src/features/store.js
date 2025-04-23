@@ -16,7 +16,7 @@ export const useAuthStore = create((set, get) => {
 
     register: (newUser) => {
       const { users } = get();
-
+      
       const updatedUsers = [...users, newUser]
       localStorage.setItem('users', JSON.stringify(updatedUsers));
 
